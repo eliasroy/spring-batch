@@ -4,7 +4,6 @@ import com.batch.springBatch.steps.ItemDescompressStep;
 import com.batch.springBatch.steps.ItemProcessorStep;
 import com.batch.springBatch.steps.ItemReaderStep;
 import com.batch.springBatch.steps.ItemWriterStep;
-import lombok.NoArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -12,10 +11,6 @@ import org.springframework.batch.core.configuration.annotation.JobScope;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
-import org.springframework.batch.core.step.tasklet.Tasklet;
-import org.springframework.batch.repeat.RepeatStatus;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -23,9 +18,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration {
-
-    private JobBuilder jobBuilderFactory;
-    private StepBuilder stepBuilderFactory;
 
     @Bean
     @JobScope
